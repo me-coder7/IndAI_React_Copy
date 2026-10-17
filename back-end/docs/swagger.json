@@ -1,0 +1,6920 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/account/profile": {
+      "patch": {
+        "operationId": "AccountController_profile",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Account"
+        ]
+      }
+    },
+    "/api/account/password": {
+      "post": {
+        "operationId": "AccountController_password",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Account"
+        ]
+      }
+    },
+    "/api/contact": {
+      "post": {
+        "operationId": "ContactController_contact",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Contact"
+        ]
+      }
+    },
+    "/api/public/config": {
+      "get": {
+        "operationId": "PublicController_config",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Public"
+        ]
+      }
+    },
+    "/api/institutes/{id}/invite": {
+      "post": {
+        "operationId": "InstitutesController_invite",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InviteDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Institutes"
+        ]
+      }
+    },
+    "/api/institutes/intake/{token}": {
+      "get": {
+        "operationId": "InstitutesController_intake",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Institutes"
+        ]
+      },
+      "post": {
+        "operationId": "InstitutesController_submit",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CsvDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Institutes"
+        ]
+      }
+    },
+    "/api/institutes/{id}/requests": {
+      "get": {
+        "operationId": "InstitutesController_requests",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Institutes"
+        ]
+      }
+    },
+    "/api/institutes/{id}/preview": {
+      "post": {
+        "operationId": "InstitutesController_preview",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CsvDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Institutes"
+        ]
+      }
+    },
+    "/api/institutes/{id}/import": {
+      "post": {
+        "operationId": "InstitutesController_importCsv",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CsvDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Institutes"
+        ]
+      }
+    },
+    "/api/institutes/{id}/email-credentials": {
+      "post": {
+        "operationId": "InstitutesController_credentials",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CredentialEmailDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Institutes"
+        ]
+      }
+    },
+    "/api/users": {
+      "get": {
+        "operationId": "UsersController_all",
+        "parameters": [
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List users",
+        "tags": [
+          "Users"
+        ]
+      },
+      "post": {
+        "operationId": "UsersController_create",
+        "parameters": [
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create user",
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/users/role/{role}": {
+      "get": {
+        "operationId": "UsersController_byRole",
+        "parameters": [
+          {
+            "name": "role",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List users by role",
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/users/{id}": {
+      "get": {
+        "operationId": "UsersController_one",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get user by id",
+        "tags": [
+          "Users"
+        ]
+      },
+      "patch": {
+        "operationId": "UsersController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update user",
+        "tags": [
+          "Users"
+        ]
+      },
+      "delete": {
+        "operationId": "UsersController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Delete user",
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/users/register": {
+      "post": {
+        "operationId": "UsersController_register",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Public registration endpoint",
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/users/{id}/portfolio": {
+      "get": {
+        "operationId": "UsersController_portfolio",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get learner portfolio, holdings and trades",
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/algo/{route}": {
+      "get": {
+        "operationId": "AlgoController_route_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Algo"
+        ]
+      },
+      "post": {
+        "operationId": "AlgoController_route_post",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Algo"
+        ]
+      },
+      "put": {
+        "operationId": "AlgoController_route_put",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Algo"
+        ]
+      },
+      "delete": {
+        "operationId": "AlgoController_route_delete",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Algo"
+        ]
+      },
+      "patch": {
+        "operationId": "AlgoController_route_patch",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Algo"
+        ]
+      },
+      "options": {
+        "operationId": "AlgoController_route_options",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Algo"
+        ]
+      },
+      "head": {
+        "operationId": "AlgoController_route_head",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Algo"
+        ]
+      },
+      "search": {
+        "operationId": "AlgoController_route_search",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Algo"
+        ]
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "operationId": "AuthController_login",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Authenticate credentials and issue a signed JWT access token plus HttpOnly refresh cookie.",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/api/auth/register": {
+      "post": {
+        "operationId": "AuthController_register",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Public registration. Active learner accounts receive JWT auth; pending roles wait for Super Admin approval.",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/api/auth/refresh": {
+      "post": {
+        "operationId": "AuthController_refresh",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Rotate the HttpOnly refresh token and issue a fresh short-lived access JWT.",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "operationId": "AuthController_logout",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Revoke the current refresh session and clear the refresh cookie.",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/api/auth/me": {
+      "get": {
+        "operationId": "AuthController_me",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get the authenticated JWT user profile.",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/api/auth/me/{userId}": {
+      "get": {
+        "operationId": "AuthController_meById",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Compatibility profile route. Non-admin learners/providers can only read themselves.",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/api/stocks": {
+      "get": {
+        "operationId": "StocksController_findAll",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sector",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cap",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List all stocks with live prices replayed from uploaded 1-minute CSV datasets",
+        "tags": [
+          "Stocks"
+        ]
+      }
+    },
+    "/api/stocks/live/tick": {
+      "get": {
+        "operationId": "StocksController_tick",
+        "parameters": [
+          {
+            "name": "symbols",
+            "required": false,
+            "in": "query",
+            "description": "Optional comma-separated symbols like TCS,INFY,RELIANCE",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get one live market tick. Prices, percentages, movers and volumes change automatically from CSV candles",
+        "tags": [
+          "Stocks"
+        ]
+      }
+    },
+    "/api/stocks/{symbol}": {
+      "get": {
+        "operationId": "StocksController_findOne",
+        "parameters": [
+          {
+            "name": "symbol",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get one live stock quote by symbol",
+        "tags": [
+          "Stocks"
+        ]
+      }
+    },
+    "/api/stocks/{symbol}/candles": {
+      "get": {
+        "operationId": "StocksController_candles",
+        "parameters": [
+          {
+            "name": "symbol",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get rolling minute-by-minute candles ending at current replay tick",
+        "tags": [
+          "Stocks"
+        ]
+      }
+    },
+    "/api/market/instruments": {
+      "get": {
+        "operationId": "MarketAliasController_instruments",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sector",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cap",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Alias: list market instruments",
+        "tags": [
+          "Market"
+        ]
+      }
+    },
+    "/api/market/instruments/{symbol}": {
+      "get": {
+        "operationId": "MarketAliasController_instrument",
+        "parameters": [
+          {
+            "name": "symbol",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Alias: get market instrument by symbol",
+        "tags": [
+          "Market"
+        ]
+      }
+    },
+    "/api/market/prices": {
+      "get": {
+        "operationId": "MarketAliasController_prices",
+        "parameters": [
+          {
+            "name": "symbols",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Alias: get live price tick for all instruments",
+        "tags": [
+          "Market"
+        ]
+      }
+    },
+    "/api/market/prices/{symbol}": {
+      "patch": {
+        "operationId": "MarketAliasController_patchPrice",
+        "parameters": [
+          {
+            "name": "symbol",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Demo endpoint: return latest live price for symbol",
+        "tags": [
+          "Market"
+        ]
+      }
+    },
+    "/api/trades": {
+      "get": {
+        "operationId": "TradesController_all",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List all trades",
+        "tags": [
+          "Trades"
+        ]
+      },
+      "post": {
+        "operationId": "TradesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTradeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Execute paper BUY/SELL order",
+        "tags": [
+          "Trades"
+        ]
+      }
+    },
+    "/api/trades/user/{userId}": {
+      "get": {
+        "operationId": "TradesController_byUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List learner trades",
+        "tags": [
+          "Trades"
+        ]
+      }
+    },
+    "/api/trading/orders": {
+      "get": {
+        "operationId": "TradingAliasController_allOrders",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Alias: list all orders/trades",
+        "tags": [
+          "Trading"
+        ]
+      },
+      "post": {
+        "operationId": "TradingAliasController_order",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Alias: place paper trading order",
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/api/trading/orders/learner/{learnerId}": {
+      "get": {
+        "operationId": "TradingAliasController_learnerOrders",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Alias: list learner orders/trades",
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/api/trading/trades": {
+      "get": {
+        "operationId": "TradingAliasController_allTrades",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Alias: list all trades",
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/api/trading/trades/learner/{learnerId}": {
+      "get": {
+        "operationId": "TradingAliasController_learnerTrades",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Alias: list learner trades",
+        "tags": [
+          "Trading"
+        ]
+      }
+    },
+    "/api/watchlists/{userId}": {
+      "get": {
+        "operationId": "WatchlistsController_list",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get watchlists for user",
+        "tags": [
+          "Watchlists"
+        ]
+      },
+      "post": {
+        "operationId": "WatchlistsController_create",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWatchlistDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create watchlist",
+        "tags": [
+          "Watchlists"
+        ]
+      }
+    },
+    "/api/watchlists/{userId}/items": {
+      "post": {
+        "operationId": "WatchlistsController_addItem",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddWatchlistSymbolDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Add symbol to the first/default watchlist by user id",
+        "tags": [
+          "Watchlists"
+        ]
+      }
+    },
+    "/api/watchlists/{userId}/items/{symbol}": {
+      "delete": {
+        "operationId": "WatchlistsController_removeItem",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Remove symbol from the first/default watchlist by user id",
+        "tags": [
+          "Watchlists"
+        ]
+      }
+    },
+    "/api/watchlists/{id}": {
+      "patch": {
+        "operationId": "WatchlistsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWatchlistDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update watchlist symbols/name",
+        "tags": [
+          "Watchlists"
+        ]
+      },
+      "delete": {
+        "operationId": "WatchlistsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Delete watchlist",
+        "tags": [
+          "Watchlists"
+        ]
+      }
+    },
+    "/api/watchlists/{id}/symbols/{symbol}": {
+      "post": {
+        "operationId": "WatchlistsController_add",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Add symbol to watchlist",
+        "tags": [
+          "Watchlists"
+        ]
+      },
+      "delete": {
+        "operationId": "WatchlistsController_remSym",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Remove symbol from watchlist",
+        "tags": [
+          "Watchlists"
+        ]
+      }
+    },
+    "/api/courses": {
+      "get": {
+        "operationId": "CoursesController_all",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List courses",
+        "tags": [
+          "Courses"
+        ]
+      },
+      "post": {
+        "operationId": "CoursesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCourseDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create course",
+        "tags": [
+          "Courses"
+        ]
+      }
+    },
+    "/api/courses/published": {
+      "get": {
+        "operationId": "CoursesController_published",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List published courses",
+        "tags": [
+          "Courses"
+        ]
+      }
+    },
+    "/api/courses/provider/{providerId}": {
+      "get": {
+        "operationId": "CoursesController_byProvider",
+        "parameters": [
+          {
+            "name": "providerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List courses by provider",
+        "tags": [
+          "Courses"
+        ]
+      }
+    },
+    "/api/courses/{id}": {
+      "get": {
+        "operationId": "CoursesController_one",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get one course",
+        "tags": [
+          "Courses"
+        ]
+      },
+      "patch": {
+        "operationId": "CoursesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCourseDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update course",
+        "tags": [
+          "Courses"
+        ]
+      },
+      "delete": {
+        "operationId": "CoursesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Delete course",
+        "tags": [
+          "Courses"
+        ]
+      }
+    },
+    "/api/courses/{courseId}/modules": {
+      "get": {
+        "operationId": "CourseModulesController_list",
+        "parameters": [
+          {
+            "name": "courseId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-role",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List modules for a course, including uploaded video modules",
+        "tags": [
+          "Course Modules"
+        ]
+      },
+      "post": {
+        "operationId": "CourseModulesController_create",
+        "parameters": [
+          {
+            "name": "courseId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCourseModuleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create course module",
+        "tags": [
+          "Course Modules"
+        ]
+      }
+    },
+    "/api/course-modules/upload-video": {
+      "post": {
+        "operationId": "CourseModulesController_uploadVideo",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "courseId",
+                  "title",
+                  "video"
+                ],
+                "properties": {
+                  "courseId": {
+                    "type": "string",
+                    "example": "c1"
+                  },
+                  "afterModuleId": {
+                    "type": "string",
+                    "example": "m1",
+                    "description": "Optional module after which the uploaded video should be inserted."
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 3,
+                    "example": "Introduction to Candlestick Charts"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Video lesson for learners."
+                  },
+                  "duration": {
+                    "type": "string",
+                    "example": "12:34"
+                  },
+                  "video": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Upload a video lesson to a specific course as a module",
+        "tags": [
+          "Course Modules"
+        ]
+      }
+    },
+    "/api/course-modules/upload-pdf": {
+      "post": {
+        "operationId": "CourseModulesController_uploadPdf",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "courseId",
+                  "title",
+                  "pdf"
+                ],
+                "properties": {
+                  "courseId": {
+                    "type": "string",
+                    "example": "c1"
+                  },
+                  "title": {
+                    "type": "string",
+                    "example": "Risk Management Workbook"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "providerId": {
+                    "type": "string",
+                    "example": "u5"
+                  },
+                  "proOnly": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "pdf": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Upload a PDF learning material to a course as a learner-visible module",
+        "tags": [
+          "Course Modules"
+        ]
+      }
+    },
+    "/api/course-modules/{id}": {
+      "patch": {
+        "operationId": "CourseModulesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCourseModuleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update course module",
+        "tags": [
+          "Course Modules"
+        ]
+      },
+      "delete": {
+        "operationId": "CourseModulesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Delete course module",
+        "tags": [
+          "Course Modules"
+        ]
+      }
+    },
+    "/api/enrollments": {
+      "get": {
+        "operationId": "EnrollmentsController_all",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List enrollments",
+        "tags": [
+          "Enrollments"
+        ]
+      },
+      "post": {
+        "operationId": "EnrollmentsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEnrollmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Enroll learner in course; Pro courses require an active Pro learner subscription",
+        "tags": [
+          "Enrollments"
+        ]
+      }
+    },
+    "/api/enrollments/learner/{learnerId}": {
+      "get": {
+        "operationId": "EnrollmentsController_learner",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List learner enrollments",
+        "tags": [
+          "Enrollments"
+        ]
+      }
+    },
+    "/api/enrollments/{id}/progress": {
+      "patch": {
+        "operationId": "EnrollmentsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProgressDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update enrollment progress",
+        "tags": [
+          "Enrollments"
+        ]
+      }
+    },
+    "/api/enrollments/{id}": {
+      "delete": {
+        "operationId": "EnrollmentsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Delete enrollment",
+        "tags": [
+          "Enrollments"
+        ]
+      }
+    },
+    "/api/diagnostic/submit": {
+      "post": {
+        "operationId": "DiagnosticController_submit",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitDiagnosticDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Submit diagnostic quiz and categorize learner",
+        "tags": [
+          "Diagnostic"
+        ]
+      }
+    },
+    "/api/diagnostic/learner/{learnerId}": {
+      "get": {
+        "operationId": "DiagnosticController_get",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get learner diagnostic results",
+        "tags": [
+          "Diagnostic"
+        ]
+      }
+    },
+    "/api/assignments": {
+      "get": {
+        "operationId": "AssignmentsController_all",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List assignments",
+        "tags": [
+          "Assignments"
+        ]
+      },
+      "post": {
+        "operationId": "AssignmentsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAssignmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create assignment",
+        "tags": [
+          "Assignments"
+        ]
+      }
+    },
+    "/api/assignments/learner/{learnerId}": {
+      "get": {
+        "operationId": "AssignmentsController_byLearner",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List learner assignments",
+        "tags": [
+          "Assignments"
+        ]
+      }
+    },
+    "/api/assignments/{id}": {
+      "get": {
+        "operationId": "AssignmentsController_one",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get one assignment",
+        "tags": [
+          "Assignments"
+        ]
+      },
+      "patch": {
+        "operationId": "AssignmentsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAssignmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update assignment",
+        "tags": [
+          "Assignments"
+        ]
+      },
+      "delete": {
+        "operationId": "AssignmentsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Delete assignment",
+        "tags": [
+          "Assignments"
+        ]
+      }
+    },
+    "/api/assignments/{id}/submit": {
+      "post": {
+        "operationId": "AssignmentsController_submit",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitAssignmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Submit assignment",
+        "tags": [
+          "Assignments"
+        ]
+      }
+    },
+    "/api/assignments/{id}/approve/{learnerId}": {
+      "post": {
+        "operationId": "AssignmentsController_approve",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Approve learner assignment completion",
+        "tags": [
+          "Assignments"
+        ]
+      }
+    },
+    "/api/sessions": {
+      "get": {
+        "operationId": "SessionsController_all",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List sessions",
+        "tags": [
+          "Sessions"
+        ]
+      },
+      "post": {
+        "operationId": "SessionsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSessionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create session",
+        "tags": [
+          "Sessions"
+        ]
+      }
+    },
+    "/api/sessions/learner/{learnerId}": {
+      "get": {
+        "operationId": "SessionsController_byLearner",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List learner sessions",
+        "tags": [
+          "Sessions"
+        ]
+      }
+    },
+    "/api/sessions/{id}": {
+      "get": {
+        "operationId": "SessionsController_one",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get one session",
+        "tags": [
+          "Sessions"
+        ]
+      },
+      "patch": {
+        "operationId": "SessionsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSessionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update session",
+        "tags": [
+          "Sessions"
+        ]
+      },
+      "delete": {
+        "operationId": "SessionsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Delete session",
+        "tags": [
+          "Sessions"
+        ]
+      }
+    },
+    "/api/quizzes/upload-pdf": {
+      "post": {
+        "operationId": "QuizzesController_uploadPdf",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Quizzes"
+        ]
+      }
+    },
+    "/api/quizzes/{id}/attempts/{attemptId}/grade": {
+      "post": {
+        "operationId": "QuizzesController_grade",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attemptId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GradeQuizDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Quizzes"
+        ]
+      }
+    },
+    "/api/quizzes": {
+      "get": {
+        "operationId": "QuizzesController_all",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Quizzes"
+        ]
+      },
+      "post": {
+        "operationId": "QuizzesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateQuizDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Quizzes"
+        ]
+      }
+    },
+    "/api/quizzes/{id}": {
+      "get": {
+        "operationId": "QuizzesController_one",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Quizzes"
+        ]
+      },
+      "patch": {
+        "operationId": "QuizzesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateQuizDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Quizzes"
+        ]
+      },
+      "delete": {
+        "operationId": "QuizzesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Quizzes"
+        ]
+      }
+    },
+    "/api/quizzes/{id}/submit": {
+      "post": {
+        "operationId": "QuizzesController_submit",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitQuizDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Quizzes"
+        ]
+      }
+    },
+    "/api/feedback": {
+      "get": {
+        "operationId": "FeedbackController_all",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Feedback"
+        ]
+      },
+      "post": {
+        "operationId": "FeedbackController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFeedbackDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create feedback",
+        "tags": [
+          "Feedback"
+        ]
+      }
+    },
+    "/api/feedback/learner/{learnerId}": {
+      "get": {
+        "operationId": "FeedbackController_learner",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Feedback"
+        ]
+      }
+    },
+    "/api/feedback/{id}": {
+      "patch": {
+        "operationId": "FeedbackController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFeedbackDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Feedback"
+        ]
+      },
+      "delete": {
+        "operationId": "FeedbackController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Feedback"
+        ]
+      }
+    },
+    "/api/notifications/send": {
+      "post": {
+        "operationId": "NotificationsController_send",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendNotificationsDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Notifications"
+        ]
+      }
+    },
+    "/api/notifications": {
+      "get": {
+        "operationId": "NotificationsController_all",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List all notifications",
+        "tags": [
+          "Notifications"
+        ]
+      },
+      "post": {
+        "operationId": "NotificationsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateNotificationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create notification",
+        "tags": [
+          "Notifications"
+        ]
+      }
+    },
+    "/api/notifications/user/{userId}": {
+      "get": {
+        "operationId": "NotificationsController_byUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List notifications by user",
+        "tags": [
+          "Notifications"
+        ]
+      }
+    },
+    "/api/notifications/{id}": {
+      "get": {
+        "operationId": "NotificationsController_one",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get one notification",
+        "tags": [
+          "Notifications"
+        ]
+      },
+      "patch": {
+        "operationId": "NotificationsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateNotificationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update notification",
+        "tags": [
+          "Notifications"
+        ]
+      },
+      "delete": {
+        "operationId": "NotificationsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Delete notification",
+        "tags": [
+          "Notifications"
+        ]
+      }
+    },
+    "/api/notifications/{id}/read": {
+      "patch": {
+        "operationId": "NotificationsController_read",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Mark notification as read",
+        "tags": [
+          "Notifications"
+        ]
+      }
+    },
+    "/api/portfolio/{learnerId}": {
+      "get": {
+        "operationId": "PortfolioController_one",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get learner portfolio",
+        "tags": [
+          "Portfolio"
+        ]
+      }
+    },
+    "/api/portfolio/{learnerId}/holdings": {
+      "get": {
+        "operationId": "PortfolioController_holdings",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get learner holdings",
+        "tags": [
+          "Portfolio"
+        ]
+      }
+    },
+    "/api/portfolio/{learnerId}/performance": {
+      "get": {
+        "operationId": "PortfolioController_performance",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get learner performance summary",
+        "tags": [
+          "Portfolio"
+        ]
+      }
+    },
+    "/api/reports/platform": {
+      "get": {
+        "operationId": "ReportsController_platform",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Reports"
+        ]
+      }
+    },
+    "/api/reports/learner/{learnerId}": {
+      "get": {
+        "operationId": "ReportsController_learner",
+        "parameters": [
+          {
+            "name": "learnerId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Reports"
+        ]
+      }
+    },
+    "/api/reports/course/{courseId}": {
+      "get": {
+        "operationId": "ReportsController_course",
+        "parameters": [
+          {
+            "name": "courseId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Reports"
+        ]
+      }
+    },
+    "/api/admin/config": {
+      "get": {
+        "operationId": "AdminController_config",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get platform config",
+        "tags": [
+          "Admin"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminController_updateConfig",
+        "parameters": [
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConfigDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update platform config",
+        "tags": [
+          "Admin"
+        ]
+      }
+    },
+    "/api/admin/assign-instructor": {
+      "post": {
+        "operationId": "AdminController_assign",
+        "parameters": [
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignInstructorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Assign instructor to learner",
+        "tags": [
+          "Admin"
+        ]
+      }
+    },
+    "/api/superuser/overview": {
+      "get": {
+        "operationId": "SuperuserController_overview",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Super Admin system overview",
+        "tags": [
+          "Superuser"
+        ]
+      }
+    },
+    "/api/superuser/all-data": {
+      "get": {
+        "operationId": "SuperuserController_allData",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Super Admin full in-memory repository snapshot",
+        "tags": [
+          "Superuser"
+        ]
+      }
+    },
+    "/api/superuser/audit-logs": {
+      "get": {
+        "operationId": "SuperuserController_audit",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Super Admin audit log for administrative, payment and revenue actions",
+        "tags": [
+          "Superuser"
+        ]
+      }
+    },
+    "/api/superuser/pending-approvals": {
+      "get": {
+        "operationId": "SuperuserController_pendingApprovals",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List pending Instructor, Course Provider, User Admin and Payment Admin account requests",
+        "tags": [
+          "Superuser"
+        ]
+      }
+    },
+    "/api/superuser/approvals/{userId}/approve": {
+      "post": {
+        "operationId": "SuperuserController_approve",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Approve a pending account request. Admin requests keep their selected division.",
+        "tags": [
+          "Superuser"
+        ]
+      }
+    },
+    "/api/superuser/approvals/{userId}/reject": {
+      "post": {
+        "operationId": "SuperuserController_reject",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Reject and remove a pending account request",
+        "tags": [
+          "Superuser"
+        ]
+      }
+    },
+    "/api/superuser/reset-demo-data": {
+      "post": {
+        "operationId": "SuperuserController_reset",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Reset demo data by restarting in-memory seed",
+        "tags": [
+          "Superuser"
+        ]
+      }
+    },
+    "/api/commercial/compensation/instructors": {
+      "get": {
+        "operationId": "CommercialController_compensation",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/plans": {
+      "get": {
+        "operationId": "CommercialController_plans",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/subscriptions/user/{userId}": {
+      "get": {
+        "operationId": "CommercialController_userSub",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/organizations": {
+      "get": {
+        "operationId": "CommercialController_organizations",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      },
+      "post": {
+        "operationId": "CommercialController_orgCreate",
+        "parameters": [
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrganizationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/organizations/{id}/members": {
+      "post": {
+        "operationId": "CommercialController_orgMember",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddOrganizationMemberDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/organizations/{id}/overview": {
+      "get": {
+        "operationId": "CommercialController_orgOverview",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/courses/{id}/submit-review": {
+      "post": {
+        "operationId": "CommercialController_submit",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitCourseReviewDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/courses/pending-review": {
+      "get": {
+        "operationId": "CommercialController_pending",
+        "parameters": [
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/courses/{id}/counter-offer": {
+      "post": {
+        "operationId": "CommercialController_counter",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CounterOfferDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/courses/{id}/accept-offer": {
+      "post": {
+        "operationId": "CommercialController_accept",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/courses/{id}/approve": {
+      "post": {
+        "operationId": "CommercialController_approve",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApproveCourseDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/courses/{id}/negotiation": {
+      "get": {
+        "operationId": "CommercialController_negotiation",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/providers/{id}/earnings": {
+      "get": {
+        "operationId": "CommercialController_providerEarn",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/instructors/{id}/earnings": {
+      "get": {
+        "operationId": "CommercialController_instructorEarn",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/instructors/{id}/pay-month": {
+      "post": {
+        "operationId": "CommercialController_payMonth",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstructorMonthlyPayoutDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/instructors/{id}/rate": {
+      "patch": {
+        "operationId": "CommercialController_rate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstructorRateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/instructors/{id}/bonus": {
+      "post": {
+        "operationId": "CommercialController_bonus",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstructorBonusDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/revenue/summary": {
+      "get": {
+        "operationId": "CommercialController_revenue",
+        "parameters": [
+          {
+            "name": "x-user-id",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Payment Admin revenue dashboard: B2C Pro, B2B institutional licensing, per-student commission and payouts",
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/commercial/admin-team": {
+      "get": {
+        "operationId": "CommercialController_team",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": [
+          "Commercial / Revenue Model"
+        ]
+      }
+    },
+    "/api/payments/razorpay/config": {
+      "get": {
+        "operationId": "PaymentsController_config",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Public Razorpay checkout configuration. Never returns the Key Secret.",
+        "tags": [
+          "Payments / Razorpay"
+        ]
+      }
+    },
+    "/api/payments/razorpay/pro/order": {
+      "post": {
+        "operationId": "PaymentsController_proOrder",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProRazorpayOrderDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create a real Razorpay order for a learner Pro subscription",
+        "tags": [
+          "Payments / Razorpay"
+        ]
+      }
+    },
+    "/api/payments/razorpay/pro/verify": {
+      "post": {
+        "operationId": "PaymentsController_proVerify",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyProRazorpayPaymentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Verify Razorpay signature and activate learner Pro",
+        "tags": [
+          "Payments / Razorpay"
+        ]
+      }
+    },
+    "/api/payments/razorpay/b2b/{orgId}/order": {
+      "post": {
+        "operationId": "PaymentsController_b2bOrder",
+        "parameters": [
+          {
+            "name": "orgId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateB2BRazorpayOrderDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Payment Admin creates real Razorpay order for an institution license",
+        "tags": [
+          "Payments / Razorpay"
+        ]
+      }
+    },
+    "/api/payments/razorpay/b2b/{orgId}/verify": {
+      "post": {
+        "operationId": "PaymentsController_b2bVerify",
+        "parameters": [
+          {
+            "name": "orgId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyB2BRazorpayPaymentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized: missing, invalid or expired JWT"
+          },
+          "403": {
+            "description": "Forbidden: authenticated role does not have permission"
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Verify Razorpay B2B payment and activate institution license",
+        "tags": [
+          "Payments / Razorpay"
+        ]
+      }
+    },
+    "/api/payments/razorpay/webhook": {
+      "post": {
+        "operationId": "PaymentsController_webhook",
+        "parameters": [
+          {
+            "name": "x-razorpay-signature",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Razorpay webhook endpoint. Configure this URL in the Razorpay Dashboard.",
+        "tags": [
+          "Payments / Razorpay"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "IndAI Review-4 Paper Trading API",
+    "description": "NestJS modular backend with signed JWT authentication, refresh-token rotation, role-based access control, DTO validation, Razorpay and minute-stock data endpoints.",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "Auth",
+      "description": ""
+    },
+    {
+      "name": "Payments / Razorpay",
+      "description": ""
+    },
+    {
+      "name": "Users",
+      "description": ""
+    },
+    {
+      "name": "Stocks",
+      "description": ""
+    },
+    {
+      "name": "Trades",
+      "description": ""
+    },
+    {
+      "name": "Watchlists",
+      "description": ""
+    },
+    {
+      "name": "Courses",
+      "description": ""
+    },
+    {
+      "name": "Assignments",
+      "description": ""
+    },
+    {
+      "name": "Sessions",
+      "description": ""
+    },
+    {
+      "name": "Notifications",
+      "description": ""
+    }
+  ],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "JWT": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http",
+        "description": "Paste the access token returned by POST /api/auth/login."
+      }
+    },
+    "schemas": {
+      "ProfileDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "PasswordDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "ContactDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "InviteDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "CsvDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "CredentialEmailDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateUserDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "New",
+            "minLength": 3,
+            "description": "Required. Alphabets and spaces only."
+          },
+          "lastName": {
+            "type": "string",
+            "example": "Learner",
+            "minLength": 3,
+            "description": "Required. Alphabets and spaces only."
+          },
+          "email": {
+            "type": "string",
+            "example": "new@gmail.com",
+            "description": "Required. Gmail or .in email only."
+          },
+          "password": {
+            "type": "string",
+            "example": "Test@1234",
+            "minLength": 8,
+            "description": "Required. Min 8 chars, uppercase, lowercase, number, and one of !@#$%^&*."
+          },
+          "confirmPassword": {
+            "type": "string",
+            "example": "Test@1234",
+            "description": "Optional compatibility field used by frontend/Swagger. If provided, it must match password."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "superuser",
+              "admin",
+              "instructor",
+              "provider",
+              "learner",
+              "SUPER_USER",
+              "ADMIN",
+              "INSTRUCTOR",
+              "COURSE_PROVIDER",
+              "LEARNER"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "pending",
+              "suspended",
+              "disabled"
+            ],
+            "example": "active"
+          },
+          "phone": {
+            "type": "string",
+            "example": "9876543210",
+            "description": "Optional but if provided must be 10 digits starting with 6/7/8/9."
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "example": "2007-05-09",
+            "description": "Required by registration frontend. Learner must be at least 10 years old."
+          },
+          "institution": {
+            "type": "string",
+            "example": "IIIT Sri City",
+            "minLength": 3
+          },
+          "studentId": {
+            "type": "string",
+            "example": "CSE2026",
+            "minLength": 3
+          },
+          "grade": {
+            "type": "string",
+            "example": "BTech 2nd Year",
+            "minLength": 3
+          },
+          "major": {
+            "type": "string",
+            "example": "Computer Science",
+            "minLength": 3
+          },
+          "organization": {
+            "type": "string",
+            "example": "IndAI Academy",
+            "minLength": 3
+          },
+          "expertise": {
+            "type": "string",
+            "example": "Technical Analysis",
+            "minLength": 3
+          },
+          "yearsExp": {
+            "type": "string",
+            "example": "3-5"
+          },
+          "yearsOfExperience": {
+            "type": "number",
+            "example": 5,
+            "description": "Compatibility alias for yearsExp used by some Swagger/frontend payloads."
+          },
+          "website": {
+            "type": "string",
+            "example": "https://example.com"
+          },
+          "contentType": {
+            "type": "string",
+            "enum": [
+              "Video Courses",
+              "Text Modules",
+              "Mixed"
+            ],
+            "example": "Video Courses"
+          },
+          "authCode": {
+            "type": "string",
+            "example": "ADMIN2024",
+            "description": "Required for public User Admin / Payment Admin registration requests."
+          },
+          "accessLevel": {
+            "type": "string",
+            "example": "Full"
+          },
+          "adminTeam": {
+            "type": "string",
+            "enum": [
+              "USER_ADMIN",
+              "PAYMENT_ADMIN"
+            ],
+            "description": "Requested/assigned admin division. Public admin requests remain pending until Super Admin approval."
+          },
+          "tradingExperience": {
+            "type": "string",
+            "enum": [
+              "beginner",
+              "intermediate",
+              "advanced",
+              "Beginner",
+              "Intermediate",
+              "Advanced",
+              "BEGINNER",
+              "INTERMEDIATE",
+              "ADVANCED",
+              "0-1",
+              "1-3",
+              "3-5",
+              "5+"
+            ]
+          },
+          "experienceLevel": {
+            "type": "string",
+            "enum": [
+              "beginner",
+              "intermediate",
+              "advanced",
+              "Beginner",
+              "Intermediate",
+              "Advanced",
+              "BEGINNER",
+              "INTERMEDIATE",
+              "ADVANCED",
+              "0-1",
+              "1-3",
+              "3-5",
+              "5+"
+            ],
+            "description": "Compatibility alias for experience/tradingExperience."
+          },
+          "riskTolerance": {
+            "type": "string",
+            "enum": [
+              "low",
+              "moderate",
+              "high",
+              "Low",
+              "Medium",
+              "High",
+              "Conservative",
+              "Moderate",
+              "Aggressive",
+              "LOW",
+              "MEDIUM",
+              "HIGH"
+            ]
+          },
+          "startingBalance": {
+            "type": "number",
+            "example": 100000
+          },
+          "tradingLimit": {
+            "type": "number",
+            "example": 150000
+          },
+          "instructorId": {
+            "type": "string",
+            "example": "u3"
+          },
+          "skillPoints": {
+            "type": "number",
+            "example": 50
+          },
+          "portfolioValue": {
+            "type": "number",
+            "example": 100000
+          },
+          "virtualBalance": {
+            "type": "number",
+            "example": 100000
+          },
+          "experience": {
+            "type": "string",
+            "example": "Beginner"
+          },
+          "goals": {
+            "type": "string",
+            "example": "Learn paper trading safely",
+            "maxLength": 500
+          },
+          "studentIds": {
+            "example": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "password",
+          "role"
+        ]
+      },
+      "UpdateUserDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "pending",
+              "suspended",
+              "disabled"
+            ]
+          },
+          "phone": {
+            "type": "string"
+          },
+          "tradingLimit": {
+            "type": "number"
+          },
+          "skillPoints": {
+            "type": "number"
+          },
+          "instructorId": {
+            "type": "string"
+          },
+          "institution": {
+            "type": "string"
+          },
+          "major": {
+            "type": "string"
+          },
+          "providerVerified": {
+            "type": "boolean",
+            "description": "Course Provider verification flag. Super Admin sets this after verification."
+          },
+          "adminTeam": {
+            "type": "string",
+            "enum": [
+              "USER_ADMIN",
+              "PAYMENT_ADMIN"
+            ]
+          }
+        }
+      },
+      "LoginDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "learner@indai.com",
+            "description": "Required. Frontend allows Gmail or email ending with .in only."
+          },
+          "password": {
+            "type": "string",
+            "example": "Learn@1234",
+            "description": "Required password."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "superuser",
+              "admin",
+              "instructor",
+              "provider",
+              "learner",
+              "SUPER_USER",
+              "ADMIN",
+              "INSTRUCTOR",
+              "COURSE_PROVIDER",
+              "LEARNER"
+            ],
+            "example": "LEARNER",
+            "description": "Optional selected role from frontend login/register."
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      },
+      "CreateTradeDto": {
+        "type": "object",
+        "properties": {
+          "learnerId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "symbol": {
+            "type": "string",
+            "example": "TCS"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "BUY",
+              "SELL"
+            ]
+          },
+          "orderCategory": {
+            "type": "string",
+            "enum": [
+              "MARKET",
+              "LIMIT",
+              "STOP_LOSS"
+            ],
+            "example": "MARKET"
+          },
+          "qty": {
+            "type": "number",
+            "example": 10,
+            "minimum": 1
+          },
+          "price": {
+            "type": "number",
+            "example": 3850,
+            "minimum": 0.01
+          }
+        },
+        "required": [
+          "learnerId",
+          "symbol",
+          "type",
+          "qty"
+        ]
+      },
+      "CreateOrderDto": {
+        "type": "object",
+        "properties": {
+          "learnerId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "symbol": {
+            "type": "string",
+            "example": "TCS"
+          },
+          "orderType": {
+            "type": "string",
+            "enum": [
+              "BUY",
+              "SELL"
+            ]
+          },
+          "orderCategory": {
+            "type": "string",
+            "enum": [
+              "MARKET",
+              "LIMIT",
+              "STOP_LOSS"
+            ],
+            "example": "MARKET"
+          },
+          "quantity": {
+            "type": "number",
+            "example": 10,
+            "minimum": 1
+          },
+          "price": {
+            "type": "number",
+            "example": 3850,
+            "minimum": 0.01
+          }
+        },
+        "required": [
+          "learnerId",
+          "symbol",
+          "orderType",
+          "quantity"
+        ]
+      },
+      "CreateWatchlistDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Momentum Picks",
+            "minLength": 3
+          },
+          "symbols": {
+            "example": [
+              "TCS",
+              "INFY"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "AddWatchlistSymbolDto": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "example": "TCS"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      },
+      "UpdateWatchlistDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 3
+          },
+          "symbols": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CreateCourseDto": {
+        "type": "object",
+        "properties": {
+          "providerId": {
+            "type": "string",
+            "example": "u5"
+          },
+          "title": {
+            "type": "string",
+            "example": "Paper Trading Basics",
+            "minLength": 3
+          },
+          "description": {
+            "type": "string",
+            "example": "Learn simulated trading.",
+            "minLength": 3
+          },
+          "lessons": {
+            "type": "number",
+            "example": 10,
+            "minimum": 1,
+            "maximum": 200
+          },
+          "duration": {
+            "type": "string",
+            "example": "4 weeks"
+          },
+          "skillPoints": {
+            "type": "number",
+            "example": 100,
+            "minimum": 1,
+            "maximum": 200
+          },
+          "category": {
+            "type": "string",
+            "example": "Trading"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": [
+              "Easy",
+              "Medium",
+              "Hard",
+              "BEGINNER",
+              "INTERMEDIATE",
+              "ADVANCED",
+              "Beginner",
+              "Intermediate",
+              "Advanced"
+            ],
+            "example": "BEGINNER"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "pending_review",
+              "negotiation",
+              "published",
+              "active",
+              "inactive",
+              "completed",
+              "archived",
+              "rejected"
+            ],
+            "example": "draft"
+          },
+          "accessTier": {
+            "type": "string",
+            "enum": [
+              "FREE",
+              "PRO"
+            ],
+            "example": "FREE"
+          },
+          "quotedPrice": {
+            "type": "number",
+            "example": 10000,
+            "minimum": 0,
+            "description": "Provider quoted amount for course production/licensing."
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "PLATFORM",
+              "ORGANIZATION"
+            ],
+            "example": "PLATFORM"
+          },
+          "organizationId": {
+            "type": "string",
+            "example": "org1"
+          }
+        },
+        "required": [
+          "providerId",
+          "title",
+          "description",
+          "lessons",
+          "skillPoints",
+          "category"
+        ]
+      },
+      "UpdateCourseDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 3
+          },
+          "description": {
+            "type": "string",
+            "minLength": 3
+          },
+          "lessons": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 200
+          },
+          "duration": {
+            "type": "string"
+          },
+          "skillPoints": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 200
+          },
+          "category": {
+            "type": "string"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": [
+              "Easy",
+              "Medium",
+              "Hard",
+              "BEGINNER",
+              "INTERMEDIATE",
+              "ADVANCED",
+              "Beginner",
+              "Intermediate",
+              "Advanced"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "pending_review",
+              "negotiation",
+              "published",
+              "active",
+              "inactive",
+              "completed",
+              "archived",
+              "rejected"
+            ]
+          },
+          "providerId": {
+            "type": "string"
+          },
+          "accessTier": {
+            "type": "string",
+            "enum": [
+              "FREE",
+              "PRO"
+            ]
+          },
+          "quotedPrice": {
+            "type": "number",
+            "minimum": 0
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "PLATFORM",
+              "ORGANIZATION"
+            ]
+          },
+          "organizationId": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateCourseModuleDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Market Basics",
+            "minLength": 3
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "video",
+              "document",
+              "quiz",
+              "text",
+              "article",
+              "assignment",
+              "Video Courses",
+              "Text Modules",
+              "Mixed"
+            ],
+            "example": "video"
+          },
+          "duration": {
+            "type": "string",
+            "example": "15 min"
+          },
+          "order": {
+            "type": "number",
+            "example": 1,
+            "minimum": 1
+          },
+          "url": {
+            "type": "string",
+            "example": "https://example.com/video.mp4"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "order"
+        ]
+      },
+      "UpdateCourseModuleDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 3
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "video",
+              "document",
+              "quiz",
+              "text",
+              "article",
+              "assignment",
+              "Video Courses",
+              "Text Modules",
+              "Mixed"
+            ]
+          },
+          "duration": {
+            "type": "string"
+          },
+          "order": {
+            "type": "number",
+            "minimum": 1
+          },
+          "url": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateEnrollmentDto": {
+        "type": "object",
+        "properties": {
+          "learnerId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "courseId": {
+            "type": "string",
+            "example": "c1"
+          },
+          "assignedBy": {
+            "type": "string",
+            "example": "Admin User"
+          }
+        },
+        "required": [
+          "learnerId",
+          "courseId"
+        ]
+      },
+      "UpdateProgressDto": {
+        "type": "object",
+        "properties": {
+          "progress": {
+            "type": "number",
+            "example": 75,
+            "minimum": 0,
+            "maximum": 100
+          },
+          "moduleId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "in_progress",
+              "completed",
+              "pending"
+            ]
+          }
+        }
+      },
+      "SubmitDiagnosticDto": {
+        "type": "object",
+        "properties": {
+          "learnerId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "score": {
+            "type": "number",
+            "example": 72,
+            "minimum": 0,
+            "maximum": 100,
+            "description": "0-40 Beginner, 41-75 Intermediate, 76-100 Advanced."
+          }
+        },
+        "required": [
+          "learnerId",
+          "score"
+        ]
+      },
+      "CreateAssignmentDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Trading Plan",
+            "minLength": 3
+          },
+          "description": {
+            "type": "string",
+            "example": "Submit a paper trade plan.",
+            "minLength": 3
+          },
+          "instructorId": {
+            "type": "string",
+            "example": "u3"
+          },
+          "studentIds": {
+            "example": [
+              "u6"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dueDate": {
+            "type": "string",
+            "example": "2026-05-20",
+            "description": "Must be a future date within 365 days."
+          },
+          "skillPoints": {
+            "type": "number",
+            "example": 50,
+            "minimum": 1,
+            "maximum": 200
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": [
+              "Easy",
+              "Medium",
+              "Hard",
+              "BEGINNER",
+              "INTERMEDIATE",
+              "ADVANCED",
+              "Beginner",
+              "Intermediate",
+              "Advanced"
+            ],
+            "example": "Medium"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "completed",
+              "pending",
+              "in_progress",
+              "submitted",
+              "approved"
+            ],
+            "example": "active"
+          },
+          "type": {
+            "type": "string",
+            "example": "Trading Challenge"
+          }
+        },
+        "required": [
+          "title",
+          "description",
+          "instructorId",
+          "dueDate",
+          "skillPoints"
+        ]
+      },
+      "UpdateAssignmentDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 3
+          },
+          "description": {
+            "type": "string",
+            "minLength": 3
+          },
+          "instructorId": {
+            "type": "string"
+          },
+          "studentIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dueDate": {
+            "type": "string"
+          },
+          "skillPoints": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 200
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": [
+              "Easy",
+              "Medium",
+              "Hard",
+              "BEGINNER",
+              "INTERMEDIATE",
+              "ADVANCED",
+              "Beginner",
+              "Intermediate",
+              "Advanced"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "completed",
+              "pending",
+              "in_progress",
+              "submitted",
+              "approved"
+            ]
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "SubmitAssignmentDto": {
+        "type": "object",
+        "properties": {
+          "learnerId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "submissionText": {
+            "type": "string",
+            "example": "My solution text"
+          }
+        },
+        "required": [
+          "learnerId"
+        ]
+      },
+      "CreateSessionDto": {
+        "type": "object",
+        "properties": {
+          "instructorId": {
+            "type": "string",
+            "example": "u3"
+          },
+          "title": {
+            "type": "string",
+            "example": "Live Trading Practice",
+            "minLength": 3
+          },
+          "description": {
+            "type": "string",
+            "example": "Practice session",
+            "minLength": 3
+          },
+          "date": {
+            "type": "string",
+            "example": "2026-05-10",
+            "description": "Must be a future date within 365 days."
+          },
+          "time": {
+            "type": "string",
+            "example": "10:00"
+          },
+          "studentIds": {
+            "example": [
+              "u6"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "duration": {
+            "type": "number",
+            "example": 60,
+            "minimum": 15,
+            "maximum": 480
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "scheduled",
+              "completed",
+              "cancelled",
+              "active",
+              "pending"
+            ],
+            "example": "scheduled"
+          },
+          "type": {
+            "type": "string",
+            "example": "Trading Session"
+          }
+        },
+        "required": [
+          "instructorId",
+          "title",
+          "date",
+          "time"
+        ]
+      },
+      "UpdateSessionDto": {
+        "type": "object",
+        "properties": {
+          "instructorId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 3
+          },
+          "description": {
+            "type": "string",
+            "minLength": 3
+          },
+          "date": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "studentIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "duration": {
+            "type": "number",
+            "minimum": 15,
+            "maximum": 480
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "scheduled",
+              "completed",
+              "cancelled",
+              "active",
+              "pending"
+            ]
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "GradeQuizDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateQuizDto": {
+        "type": "object",
+        "properties": {
+          "courseId": {
+            "type": "string",
+            "example": "c1"
+          },
+          "providerId": {
+            "type": "string",
+            "example": "u5"
+          },
+          "title": {
+            "type": "string",
+            "example": "Basics Quiz",
+            "minLength": 3
+          },
+          "questions": {
+            "type": "object",
+            "description": "Frontend may send a question count number; API may also accept question objects.",
+            "example": [
+              {
+                "q": "Paper trading?",
+                "options": [
+                  "Virtual",
+                  "Real"
+                ],
+                "ans": 0
+              }
+            ]
+          },
+          "questionCount": {
+            "type": "number",
+            "example": 10,
+            "minimum": 1,
+            "maximum": 50
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "inactive"
+            ]
+          }
+        },
+        "required": [
+          "title"
+        ]
+      },
+      "UpdateQuizDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 3
+          },
+          "courseId": {
+            "type": "string"
+          },
+          "questions": {
+            "type": "object"
+          },
+          "questionCount": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 50
+          },
+          "timeLimit": {
+            "type": "number",
+            "minimum": 5,
+            "maximum": 120
+          },
+          "passingScore": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "skillPointsOnPass": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "inactive"
+            ]
+          }
+        }
+      },
+      "SubmitQuizDto": {
+        "type": "object",
+        "properties": {
+          "learnerId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "answers": {
+            "example": [
+              0,
+              1,
+              2
+            ],
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        "required": [
+          "learnerId",
+          "answers"
+        ]
+      },
+      "CreateFeedbackDto": {
+        "type": "object",
+        "properties": {
+          "instructorId": {
+            "type": "string",
+            "example": "u3"
+          },
+          "learnerId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "message": {
+            "type": "string",
+            "example": "Good progress",
+            "minLength": 3
+          },
+          "rating": {
+            "type": "number",
+            "example": 4,
+            "minimum": 1,
+            "maximum": 5
+          }
+        },
+        "required": [
+          "instructorId",
+          "learnerId",
+          "message"
+        ]
+      },
+      "UpdateFeedbackDto": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "minLength": 3
+          },
+          "rating": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+      },
+      "SendNotificationsDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateNotificationDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "title": {
+            "type": "string",
+            "example": "New session scheduled"
+          },
+          "message": {
+            "type": "string",
+            "example": "New session scheduled"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "info",
+              "success",
+              "warning",
+              "error",
+              "trade",
+              "course",
+              "assignment",
+              "session",
+              "student"
+            ],
+            "example": "info"
+          },
+          "read": {
+            "type": "boolean",
+            "example": false
+          },
+          "id": {
+            "type": "string",
+            "example": "n1"
+          },
+          "createdAt": {
+            "type": "string",
+            "example": "2026-05-03T00:00:00.000Z"
+          }
+        },
+        "required": [
+          "userId",
+          "message"
+        ]
+      },
+      "UpdateNotificationDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "info",
+              "success",
+              "warning",
+              "error",
+              "trade",
+              "course",
+              "assignment",
+              "session",
+              "student"
+            ]
+          },
+          "read": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UpdateConfigDto": {
+        "type": "object",
+        "properties": {
+          "maxDailyTrades": {
+            "type": "number",
+            "example": 10,
+            "minimum": 1
+          },
+          "defaultTradingLimit": {
+            "type": "number",
+            "example": 150000,
+            "minimum": 1
+          },
+          "maintenanceMode": {
+            "type": "boolean",
+            "example": false
+          },
+          "platformName": {
+            "type": "string",
+            "example": "IndAI",
+            "minLength": 2
+          },
+          "maxLimit": {
+            "type": "number",
+            "example": 100000,
+            "minimum": 1
+          },
+          "maxPts": {
+            "type": "number",
+            "example": 200,
+            "minimum": 1
+          },
+          "minMargin": {
+            "type": "number",
+            "example": 10,
+            "minimum": 0
+          },
+          "cooldown": {
+            "type": "number",
+            "example": 60,
+            "minimum": 0
+          }
+        }
+      },
+      "AssignInstructorDto": {
+        "type": "object",
+        "properties": {
+          "learnerId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "instructorId": {
+            "type": "string",
+            "example": "u3"
+          }
+        },
+        "required": [
+          "learnerId",
+          "instructorId"
+        ]
+      },
+      "CreateOrganizationDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "IIIT Sri City"
+          },
+          "code": {
+            "type": "string",
+            "example": "IIITS"
+          },
+          "billingEmail": {
+            "type": "string",
+            "example": "finance@iiits.in"
+          },
+          "seats": {
+            "type": "number",
+            "example": 500
+          },
+          "annualPrice": {
+            "type": "number",
+            "example": 150000
+          },
+          "perStudentFee": {
+            "type": "number",
+            "example": 200
+          }
+        },
+        "required": [
+          "name",
+          "code",
+          "billingEmail"
+        ]
+      },
+      "AddOrganizationMemberDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "example": "u6"
+          }
+        },
+        "required": [
+          "userId"
+        ]
+      },
+      "SubmitCourseReviewDto": {
+        "type": "object",
+        "properties": {
+          "quotedPrice": {
+            "type": "number",
+            "example": 12000
+          },
+          "note": {
+            "type": "string",
+            "example": "Includes 12 modules, videos, PDFs and assessments."
+          }
+        }
+      },
+      "CounterOfferDto": {
+        "type": "object",
+        "properties": {
+          "offeredPrice": {
+            "type": "number",
+            "example": 9500
+          },
+          "message": {
+            "type": "string",
+            "example": "Budget approved at this amount."
+          }
+        },
+        "required": [
+          "offeredPrice"
+        ]
+      },
+      "ApproveCourseDto": {
+        "type": "object",
+        "properties": {
+          "sanctionedAmount": {
+            "type": "number",
+            "example": 9500
+          }
+        }
+      },
+      "InstructorMonthlyPayoutDto": {
+        "type": "object",
+        "properties": {
+          "month": {
+            "type": "string",
+            "example": "2026-08",
+            "description": "Billing month in YYYY-MM. Defaults to the current month."
+          }
+        }
+      },
+      "InstructorRateDto": {
+        "type": "object",
+        "properties": {
+          "perStudentMonthlyRate": {
+            "type": "number",
+            "example": 500
+          }
+        },
+        "required": [
+          "perStudentMonthlyRate"
+        ]
+      },
+      "InstructorBonusDto": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "example": 1500
+          },
+          "reason": {
+            "type": "string",
+            "example": "Excellent learner skill-point growth this month."
+          }
+        },
+        "required": [
+          "amount"
+        ]
+      },
+      "CreateProRazorpayOrderDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "planId": {
+            "type": "string",
+            "example": "pro_monthly"
+          }
+        },
+        "required": [
+          "userId",
+          "planId"
+        ]
+      },
+      "VerifyProRazorpayPaymentDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "example": "u6"
+          },
+          "planId": {
+            "type": "string",
+            "example": "pro_monthly"
+          },
+          "razorpay_order_id": {
+            "type": "string"
+          },
+          "razorpay_payment_id": {
+            "type": "string"
+          },
+          "razorpay_signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "planId",
+          "razorpay_order_id",
+          "razorpay_payment_id",
+          "razorpay_signature"
+        ]
+      },
+      "CreateB2BRazorpayOrderDto": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "example": 150000,
+            "description": "Final annual license amount agreed by the institution and Payment Admin."
+          }
+        },
+        "required": [
+          "amount"
+        ]
+      },
+      "VerifyB2BRazorpayPaymentDto": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "example": 150000,
+            "description": "Final annual license amount agreed by the institution and Payment Admin."
+          },
+          "razorpay_order_id": {
+            "type": "string"
+          },
+          "razorpay_payment_id": {
+            "type": "string"
+          },
+          "razorpay_signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "razorpay_order_id",
+          "razorpay_payment_id",
+          "razorpay_signature"
+        ]
+      }
+    }
+  }
+}
